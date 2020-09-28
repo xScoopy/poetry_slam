@@ -5,7 +5,7 @@ def get_file_lines(filename):
 #Creation of lines_printed_backwards() function
 def lines_printed_backwards(lines_list):
     for i in range(len(lines_list)- 1, -1, -1):
-        print(lines_list[i])
+        print(f'{i + 1} {lines_list[i]}')
         
         
 
