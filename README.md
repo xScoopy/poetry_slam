@@ -1,5 +1,5 @@
 # poetry_slam
-Welcome to my poetry slam, where we will be featureing Langston Hughes' poem 'Mother to Son' based on a recommendation from someone that reads infinitely more poetry than I do.
+Welcome to my poetry slam, where we will be featuring Langston Hughes' poem 'Mother to Son' based on a recommendation from someone that reads infinitely more poetry than I do.
 
 With this poetry slam, I use a menu in terminal to allow the user to choose to display the poem in the form of 5 different options: 
 1. original poem
