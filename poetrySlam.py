@@ -46,18 +46,24 @@ def get_user_input():
     print("4. Display the poem lines from shortest to longest.")
     print("5. Display the poem lines from longest to shortest.\n")
     return input("Please choose a number, or type 'done' to exit the poetry slam\n")
+    
 
 
+#Below are the functions used to test each one as it was built:
 
 #print(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_backwards(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_random(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_custom('long', get_file_lines('poem.txt'))
 #lines_printed_normally(add_line_number(get_file_lines('poem.txt')))
+
+#Welcome statements
 print("Welcome to my poetry Slam!")
 print("Today we are featuring 'Mother to Son' by Langston Hughes")
 print("Please make a selection below:\n")
 
+#While loop to continuously loop through choices until the user types 'done'
+#line breaks and input() added to visually clean up the user experience
 while True:
     choice = get_user_input()
     if choice == '1':
