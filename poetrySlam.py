@@ -1,7 +1,14 @@
+#importing random and os for functions and clearing the screen
 import random
+import os 
 #Creation of get_file_lines() function
 def get_file_lines(filename):
     return open(filename, 'r').read().strip().split('\n')
+
+#Creation of lines_printed_normally() function
+def lines_printed_normally(lines_list):
+    for i in range(len(lines_list)):
+        print(f'{lines_list[i]}')
 
 #Creation of lines_printed_backwards() function
 def lines_printed_backwards(lines_list):
@@ -31,13 +38,65 @@ def lines_printed_custom(length, lines_list):
     if length.upper() == 'LONG' :
         lines_printed_backwards(lines_list)
 
+#Function to print out the menu of options to choose from
+def get_user_input():
+    print("1. Display the poem as it was written.")
+    print("2. Display the poem written backwards.")
+    print("3. Display the poem in a randomly written order.")
+    print("4. Display the poem lines from shortest to longest.")
+    print("5. Display the poem lines from longest to shortest.\n")
+    return input("Please choose a number, or type 'done' to exit the poetry slam\n")
+
 
 
 #print(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_backwards(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_random(add_line_number(get_file_lines('poem.txt')))
 #lines_printed_custom('long', get_file_lines('poem.txt'))
-
+#lines_printed_normally(add_line_number(get_file_lines('poem.txt')))
 print("Welcome to my poetry Slam!")
 print("Today we are featuring 'Mother to Son' by Langston Hughes")
-print("Please make a selection below: ")
+print("Please make a selection below:\n")
+
+while True:
+    choice = get_user_input()
+    if choice == '1':
+        print('\n')
+        lines_printed_normally(add_line_number(get_file_lines('poem.txt')))
+        print('\n')
+        input("press Enter to continue...")
+        os.system('clear')
+    elif choice == '2':
+        print('\n')
+        lines_printed_backwards(add_line_number(get_file_lines('poem.txt')))
+        print('\n')
+        input("press Enter to continue...")
+        os.system('clear')
+    elif choice == '3':
+        print('\n')
+        lines_printed_random(add_line_number(get_file_lines('poem.txt')))
+        print('\n')
+        input("press Enter to continue...")
+        os.system('clear')
+    elif choice == '4':
+        print('\n')
+        lines_printed_custom('short', get_file_lines('poem.txt'))
+        print('\n')
+        input("press Enter to continue...")
+        os.system('clear')
+    elif choice == '5':
+        print('\n')
+        lines_printed_custom('long', get_file_lines('poem.txt'))
+        print('\n')
+        input("press Enter to continue...")
+        os.system('clear')
+    elif choice.upper() == 'DONE':
+        break
+    else:
+        print('\n')
+        print("Please make a valid selection choosing a number 1 through 5 or 'done' to exit")
+        input("Press Enter to return to the menu")
+        os.system('clear')
+
+
+
