@@ -3,8 +3,11 @@ import random
 import os 
 #Creation of get_file_lines() function
 def get_file_lines(filename):
-    return open(filename, 'r').read().strip().split('\n')
-
+    file_holder = open(filename, 'r')
+    list_of_lines = file_holder.read().strip().split('\n')
+    file_holder.close()
+    return list_of_lines
+    
 #Creation of lines_printed_normally() function
 def lines_printed_normally(lines_list):
     for i in range(len(lines_list)):
@@ -71,6 +74,7 @@ while True:
         lines_printed_normally(add_line_number(get_file_lines('poem.txt')))
         print('\n')
         input("press Enter to continue...")
+        
         os.system('clear')
     elif choice == '2':
         print('\n')
@@ -97,6 +101,7 @@ while True:
         input("press Enter to continue...")
         os.system('clear')
     elif choice.upper() == 'DONE':
+        
         break
     else:
         print('\n')
